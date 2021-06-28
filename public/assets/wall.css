@@ -1,0 +1,60 @@
+:root {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2rem;
+  gap: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px;
+  width: 200px;
+  height: 100px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.box:hover {
+  cursor: pointer;
+}
+
+.highlight {
+  border: solid 3px var(--accent);
+  background: var(--accent);
+  color: var(--light);
+}
+
+.fixed {
+  pointer-events: none;
+}
+
+.row_1 {
+  background: blue;
+  color: var(--light);
+}
+
+.row_2 {
+  background: red;
+  color: var(--light);
+}
+
+.row_3 {
+  background: green;
+  color: var(--light);
+}
+
+.row_4 {
+  background: black;
+  color: var(--light);
+}

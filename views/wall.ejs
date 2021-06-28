@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/normalize.css" />
+    <link rel="stylesheet" href="/assets/wall.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
+    <title>Only Connect</title>
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container"></div>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+  <script>
+    const wall = <%- JSON.stringify(data[0].wall)%>
+  </script>
+  <script src="/assets/main.js"></script>
+</html>

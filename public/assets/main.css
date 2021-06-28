@@ -1,0 +1,88 @@
+html {
+  height: 100%;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 3px solid;
+  margin-bottom: 1rem;
+}
+
+nav .site-logo {
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+nav .site-logo span {
+  color: var(--accent);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--fc);
+}
+
+nav ul li a:hover {
+  color: var(--accent);
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+}
+
+.walls {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.walls a {
+  border: solid var(--dark) 3px;
+  color: var(--fc);
+  padding: 2rem;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 3rem;
+}
+
+.walls a:hover {
+  border: solid var(--accent) 3px;
+  background: var(--accent);
+  color: var(--light);
+}
+
+footer {
+  margin-top: auto;
+  border-top: solid 3px;
+}
+
+footer p {
+  margin-left: 1rem;
+}
