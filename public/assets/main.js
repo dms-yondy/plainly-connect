@@ -40,13 +40,15 @@ async function select(e) {
     }
     arr.forEach((a) => {
       a.classList.remove("highlight");
-      if (correct) a.classList.add(`row_${currRow}`);
+      if (correct) {
+        a.classList.add("fixed", `row_${currRow}`);
+      }
     });
     currRow++;
     arr.splice(0, rowLength);
     if (currIndex + rowLength == numOfGridElements) {
       for (let i = 0; i < rowLength; i++) {
-        elements[currIndex++].classList.add(`row_${currRow}`);
+        elements[currIndex++].classList.add("fixed", `row_${currRow}`);
       }
       window.alert("Congrats!! You have solved the wall!!");
     }
