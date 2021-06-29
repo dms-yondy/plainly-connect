@@ -38,11 +38,11 @@ async function select(e) {
         await swap(elements[currIndex++], arr[i]);
       }
     }
-    await fixRow(arr, currRow, correct);
+    fixRow(arr, currRow, correct);
     if (correct) currRow++;
     arr.splice(0, rowLength);
     if (currIndex + rowLength == numOfGridElements) {
-      await fixRow(elements.slice(currIndex, currIndex + 4), currRow, true);
+      fixRow(elements.slice(currIndex, currIndex + 4), currRow, true);
       window.alert("Congrats!! You have solved the wall!!!");
     }
   }
@@ -123,7 +123,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function fixRow(arr, currRow, correct) {
+function fixRow(arr, currRow, correct) {
   arr.forEach((a) => {
     a.classList.remove("highlight");
     if (correct) {
