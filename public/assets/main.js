@@ -38,19 +38,12 @@ async function select(e) {
         await swap(elements[currIndex++], arr[i]);
       }
     }
-    arr.forEach((a) => {
-      a.classList.remove("highlight");
-      if (correct) {
-        a.classList.add("fixed", `row_${currRow}`);
-      }
-    });
-    currRow++;
+    await fixRow(arr, currRow, correct);
+    if (correct) currRow++;
     arr.splice(0, rowLength);
     if (currIndex + rowLength == numOfGridElements) {
-      for (let i = 0; i < rowLength; i++) {
-        elements[currIndex++].classList.add("fixed", `row_${currRow}`);
-      }
-      window.alert("Congrats!! You have solved the wall!!");
+      await fixRow(elements.slice(currIndex, currIndex + 4), currRow, true);
+      window.alert("Congrats!! You have solved the wall!!!");
     }
   }
 }
@@ -128,6 +121,15 @@ function newContainer(elements) {
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fixRow(arr, currRow, correct) {
+  arr.forEach((a) => {
+    a.classList.remove("highlight");
+    if (correct) {
+      a.classList.add("fixed", `row_${currRow}`);
+    }
+  });
 }
 
 elements.forEach((element) => {
