@@ -117,3 +117,7 @@
 .lost_live {
   background-color: black;
 }
+
+.hidden {
+  display: none;
+}
