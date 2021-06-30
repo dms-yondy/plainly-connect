@@ -2,12 +2,17 @@ const elements = [];
 const arr = [];
 let currIndex = 0;
 let currRow = 1;
+let livesIndex = 0;
 let container = document.querySelector(".container");
 <<<<<<< HEAD
 const button = document.querySelector(".timeAndLives button");
 =======
 let lives = document.querySelector(".lives");
+<<<<<<< HEAD
 >>>>>>> added lives query selector
+=======
+const livesArr = document.querySelectorAll(".live");
+>>>>>>> made is show that the lives now change colour when an incorrect guess is made
 const delay = 300;
 const animationLength = 300;
 const rowLength = 4;
@@ -49,6 +54,11 @@ async function select(e) {
       currRow++;
       if (currRow == 3) {
         lives.classList.remove("hidden");
+      }
+    } else if (currRow == 3) {
+      livesArr[livesIndex++].classList.add("lost_live");
+      if (livesIndex >= 3) {
+        window.alert("You have failed to solve the wall");
       }
     }
     arr.splice(0, rowLength);
