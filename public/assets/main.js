@@ -3,7 +3,11 @@ const arr = [];
 let currIndex = 0;
 let currRow = 1;
 let container = document.querySelector(".container");
+<<<<<<< HEAD
 const button = document.querySelector(".timeAndLives button");
+=======
+let lives = document.querySelector(".lives");
+>>>>>>> added lives query selector
 const delay = 300;
 const animationLength = 300;
 const rowLength = 4;
