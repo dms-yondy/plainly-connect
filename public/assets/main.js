@@ -12,6 +12,7 @@ const delay = 300;
 const animationLength = 300;
 const rowLength = 4;
 const numOfGridElements = 16;
+lives.classList.add("hidden");
 
 for (let i = 0; i < numOfGridElements; i++) {
   const element = document.createElement("div");
@@ -44,7 +45,12 @@ async function select(e) {
       }
     }
     fixRow(arr, currRow, correct);
-    if (correct) currRow++;
+    if (correct) {
+      currRow++;
+      if (currRow == 3) {
+        lives.classList.remove("hidden");
+      }
+    }
     arr.splice(0, rowLength);
     if (currIndex + rowLength == numOfGridElements) {
       fixRow(elements.slice(currIndex, currIndex + 4), currRow, true);
