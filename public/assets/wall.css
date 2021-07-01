@@ -126,6 +126,6 @@
   background-color: black;
 }
 
-.hidden {
-  display: none;
+.show {
+  opacity: 1;
 }
