@@ -3,6 +3,7 @@ const arr = [];
 let currIndex = 0;
 let currRow = 1;
 let container = document.querySelector(".container");
+const button = document.querySelector(".timeAndLives button");
 const delay = 300;
 const animationLength = 300;
 const rowLength = 4;
@@ -132,6 +133,36 @@ function fixRow(arr, currRow, correct) {
   });
 }
 
+function startTimer(duration, display) {
+  let timer = duration,
+    minutes,
+    seconds;
+  let interval = setInterval(() => {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+    if (--timer < 0) {
+      window.alert("Time up!!");
+      clearInterval(interval);
+      return;
+    }
+  }, 1000);
+}
+
+window.onload = () => {};
+
 elements.forEach((element) => {
   element.addEventListener("click", select);
+});
+
+button.addEventListener("click", (e) => {
+  console.log("clicked");
+  let threeMinutes = 60 * 3;
+  display = document.querySelector("#time");
+  button.classList.add("fixed");
+  startTimer(threeMinutes, display);
 });
