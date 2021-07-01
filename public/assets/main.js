@@ -2,8 +2,11 @@ const elements = [];
 const arr = [];
 let currIndex = 0;
 let currRow = 1;
+let livesIndex = 0;
 let container = document.querySelector(".container");
 const button = document.querySelector(".timeAndLives button");
+const lives = document.querySelectorAll(".live");
+const lives_container = document.querySelector(".lives_container");
 const delay = 300;
 const animationLength = 300;
 const rowLength = 4;
@@ -38,9 +41,16 @@ async function select(e) {
       for (let i = 0; i < 4; i++) {
         await swap(elements[currIndex++], arr[i]);
       }
+    } else if (currRow >= 3) {
+      lives[livesIndex++].classList.add("lost_live");
+      if (livesIndex >= 3) {
+        window.alert("You are out of guess");
+        livesIndex = 0;
+      }
     }
     fixRow(arr, currRow, correct);
     if (correct) currRow++;
+    if (currRow == 3) lives_container.classList.add("show");
     arr.splice(0, rowLength);
     if (currIndex + rowLength == numOfGridElements) {
       fixRow(elements.slice(currIndex, currIndex + 4), currRow, true);

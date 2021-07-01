@@ -19,7 +19,7 @@
 
 .timer {
   margin: 0 auto;
-  font-size: 1.5rem;
+  font-size: var(--fs);
 }
 
 .timeAndLives button {
@@ -56,7 +56,7 @@
   border: solid 3px;
   width: 200px;
   height: 100px;
-  font-size: 1.5rem;
+  font-size: var(--fs);
   font-weight: bold;
 }
 
@@ -92,4 +92,40 @@
 .row_4 {
   background: black;
   color: var(--light);
+}
+
+.lives_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.lives {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.lives_container p {
+  font-size: var(--fs);
+}
+
+.live {
+  width: 50px;
+  height: 50px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin: 0 0.5rem;
+}
+
+.lost_live {
+  background-color: black;
+}
+
+.show {
+  opacity: 1;
 }

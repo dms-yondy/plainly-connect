@@ -21,6 +21,8 @@ html {
 
   --ff: "Mulish", sans-serif;
   --fc: var(--dark);
+
+  --fs: 1.5rem;
 }
 
 /* Sections
