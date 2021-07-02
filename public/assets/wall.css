@@ -10,7 +10,6 @@
 }
 
 .timeAndLives {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,4 +133,32 @@
 
 .show {
   opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .wall_container {
+    padding: 1rem 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .box {
+    width: 150px;
+    height: 90px;
+  }
+
+  .timerContainer {
+    margin-top: 1rem;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .box {
+    width: 200px;
+    height: 100px;
+  }
 }
