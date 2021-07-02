@@ -4,8 +4,8 @@
 
 .wall_container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -15,6 +15,13 @@
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+}
+
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
 .timer {
@@ -41,7 +48,6 @@
   margin-bottom: 1rem;
   margin-left: 0.5rem;
   display: grid;
-  max-width: 70%;
   justify-items: center;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -54,8 +60,8 @@
   justify-content: center;
   align-items: center;
   border: solid 3px;
-  width: 200px;
-  height: 100px;
+  min-width: 150px;
+  min-height: 70px;
   font-size: var(--fs);
   font-weight: bold;
 }
