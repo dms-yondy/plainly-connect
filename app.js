@@ -24,6 +24,10 @@ app.get("/", (req, res) => {
   res.render("index", { title: "Home Page" });
 });
 
+app.get("/walls", (req, res) => {
+  res.render("index");
+});
+
 app.get("/walls/:id", async (req, res) => {
   const id = req.params.id;
   await Wall.find({ title: parseInt(id) }).then((result) => {
