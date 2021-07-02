@@ -1,5 +1,6 @@
 const elements = [];
 const arr = [];
+let wallIsSolved = false;
 let currIndex = 0;
 let currRow = 1;
 let livesIndex = 0;
@@ -54,6 +55,7 @@ async function select(e) {
     arr.splice(0, rowLength);
     if (currIndex + rowLength == numOfGridElements) {
       fixRow(elements.slice(currIndex, currIndex + 4), currRow, true);
+      wallIsSolved = true;
       window.alert("Congrats!! You have solved the wall!!!");
     }
   }
@@ -148,6 +150,10 @@ function startTimer(duration, display) {
     minutes,
     seconds;
   let interval = setInterval(() => {
+    if (wallIsSolved) {
+      clearInterval(interval);
+      return;
+    }
     minutes = parseInt(timer / 60, 10);
     seconds = parseInt(timer % 60, 10);
 
