@@ -66,10 +66,12 @@ nav ul li a:hover {
 .walls a {
   border: solid var(--dark) 3px;
   color: var(--fc);
-  padding: 2rem;
+  padding: 1.5rem;
   text-decoration: none;
   font-size: 2rem;
-  margin: 3rem;
+  margin: 2rem;
+  width: 120px;
+  text-align: center;
 }
 
 .walls a:hover {

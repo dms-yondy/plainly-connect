@@ -63,6 +63,7 @@
   min-height: 70px;
   font-size: var(--fs);
   font-weight: bold;
+  text-align: center;
 }
 
 .box:hover {
