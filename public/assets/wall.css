@@ -4,17 +4,23 @@
 
 .wall_container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
 .timeAndLives {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+}
+
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
 .timer {
@@ -41,7 +47,6 @@
   margin-bottom: 1rem;
   margin-left: 0.5rem;
   display: grid;
-  max-width: 70%;
   justify-items: center;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -54,8 +59,8 @@
   justify-content: center;
   align-items: center;
   border: solid 3px;
-  width: 200px;
-  height: 100px;
+  min-width: 150px;
+  min-height: 70px;
   font-size: var(--fs);
   font-weight: bold;
 }
@@ -128,4 +133,32 @@
 
 .show {
   opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .wall_container {
+    padding: 1rem 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .box {
+    width: 150px;
+    height: 90px;
+  }
+
+  .timerContainer {
+    margin-top: 1rem;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .box {
+    width: 200px;
+    height: 100px;
+  }
 }

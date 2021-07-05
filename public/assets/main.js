@@ -13,6 +13,8 @@ const animationLength = 300;
 const rowLength = 4;
 const numOfGridElements = 16;
 
+container.classList.add("fixed");
+
 for (let i = 0; i < numOfGridElements; i++) {
   const element = document.createElement("div");
   element.classList.add("box");
@@ -146,6 +148,7 @@ function fixRow(arr, currRow, correct) {
 }
 
 function startTimer(duration, display) {
+  container.classList.remove("fixed");
   let timer = duration,
     minutes,
     seconds;
