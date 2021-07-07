@@ -4,6 +4,7 @@ let wallIsSolved = false;
 let currIndex = 0;
 let currRow = 1;
 let livesIndex = 0;
+let interval = null;
 let container = document.querySelector(".container");
 const button = document.querySelector(".timeAndLives button");
 const lives = document.querySelectorAll(".live");
@@ -47,8 +48,13 @@ async function select(e) {
     } else if (currRow >= 3) {
       lives[livesIndex++].classList.add("lost_live");
       if (livesIndex >= 3) {
+        clearInterval(interval);
+        container.classList.add("fixed");
+        arr.forEach((a) => {
+          a.classList.remove("highlight");
+        });
         window.alert("You are out of guess");
-        livesIndex = 0;
+        return;
       }
     }
     fixRow(arr, currRow, correct);
@@ -152,7 +158,7 @@ function startTimer(duration, display) {
   let timer = duration,
     minutes,
     seconds;
-  let interval = setInterval(() => {
+  interval = setInterval(() => {
     if (wallIsSolved) {
       clearInterval(interval);
       return;
@@ -165,8 +171,9 @@ function startTimer(duration, display) {
 
     display.textContent = minutes + ":" + seconds;
     if (--timer < 0) {
-      window.alert("Time up!!");
+      container.classList.add("fixed");
       clearInterval(interval);
+      window.alert("Time up!!");
       return;
     }
   }, 1000);
