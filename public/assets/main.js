@@ -150,6 +150,7 @@ function createdSolvedWall(elements) {
   for (let i = 0; i < 4; i++) {
     const row = document.createElement("div");
     row.classList.add("row");
+    row.classList.add(`rowBorder_${i + 1}`);
     rows.push(row);
   }
   let index = 0;

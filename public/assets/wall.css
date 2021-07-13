@@ -92,6 +92,22 @@
   gap: 10px;
 }
 
+.rowBorder_1:hover {
+  outline: solid 3px blue;
+}
+
+.rowBorder_2:hover {
+  outline: solid 3px red;
+}
+
+.rowBorder_3:hover {
+  outline: solid 3px green;
+}
+
+.rowBorder_4:hover {
+  outline: solid 3px black;
+}
+
 .row_1 {
   background: blue;
   color: var(--light);
