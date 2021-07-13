@@ -64,6 +64,8 @@ async function select(e) {
     if (currIndex + rowLength == numOfGridElements) {
       fixRow(elements.slice(currIndex, currIndex + 4), currRow, true);
       wallIsSolved = true;
+      const solvedWall = createdSolvedWall(elements);
+      container.replaceWith(solvedWall);
       window.alert("Congrats!! You have solved the wall!!!");
     }
   }
@@ -139,6 +141,25 @@ function newContainer(elements) {
     newContainer.appendChild(element);
   });
   return newContainer;
+}
+
+function createdSolvedWall(elements) {
+  const solvedWall = document.createElement("div");
+  solvedWall.classList.add("solvedWall");
+  const rows = [];
+  for (let i = 0; i < 4; i++) {
+    const row = document.createElement("div");
+    row.classList.add("row");
+    rows.push(row);
+  }
+  let index = 0;
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      rows[i].append(elements[index++]);
+    }
+  }
+  rows.forEach((row) => solvedWall.appendChild(row));
+  return solvedWall;
 }
 
 function sleep(ms) {
