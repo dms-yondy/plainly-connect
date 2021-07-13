@@ -80,6 +80,18 @@
   pointer-events: none;
 }
 
+.solvedWall {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .row_1 {
   background: blue;
   color: var(--light);
