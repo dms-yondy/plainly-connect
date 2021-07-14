@@ -88,6 +88,7 @@
 }
 
 .row {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -131,6 +132,25 @@
   background: orange;
   border: solid 3px orange;
   color: var(--light);
+}
+.textDiv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.textRow {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.textDiv:hover {
+  opacity: 1;
 }
 
 .lives_container {
