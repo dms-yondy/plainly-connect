@@ -66,7 +66,7 @@ async function select(e) {
       wallIsSolved = true;
       const solvedWall = createdSolvedWall(elements);
       container.replaceWith(solvedWall);
-      // window.alert("Congrats!! You have solved the wall!!!");
+      window.alert("Congrats!! You have solved the wall!!!");
     }
   }
 }
