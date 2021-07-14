@@ -149,6 +149,10 @@ function createdSolvedWall(elements) {
   const rows = [];
   for (let i = 0; i < 4; i++) {
     const row = document.createElement("div");
+    const text = document.createElement("p");
+    text.textContent = "Some Text";
+    text.classList.add("textRow");
+    row.appendChild(text);
     row.classList.add("row");
     row.classList.add(`rowBorder_${i + 1}`);
     rows.push(row);
