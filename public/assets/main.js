@@ -1,5 +1,6 @@
 const elements = [];
 const arr = [];
+const wallSolvedOrder = [];
 let wallIsSolved = false;
 let currIndex = 0;
 let currRow = 1;
@@ -62,6 +63,9 @@ async function select(e) {
     if (currRow == 3) lives_container.classList.add("show");
     arr.splice(0, rowLength);
     if (currIndex + rowLength == numOfGridElements) {
+      checkRow(
+        elements.slice(currIndex, currIndex + 4).map((a) => a.innerText)
+      );
       fixRow(elements.slice(currIndex, currIndex + 4), currRow, true);
       wallIsSolved = true;
       const solvedWall = createdSolvedWall(elements);
@@ -119,16 +123,20 @@ function shuffle(arr) {
 }
 
 function checkRow(arr) {
+  console.log(arr);
   let valid = true;
   for (let i = 0; i < wall.length; i++) {
     const row = wall[i];
-    for (let i = 0; i < arr.length; i++) {
-      if (row.indexOf(arr[i]) < 0) {
+    for (let j = 0; j < arr.length; j++) {
+      if (row.indexOf(arr[j]) < 0) {
         valid = false;
         break;
       }
     }
-    if (valid) return true;
+    if (valid) {
+      wallSolvedOrder.push(i);
+      return true;
+    }
     valid = true;
   }
   return false;
@@ -147,11 +155,12 @@ function createdSolvedWall(elements) {
   const solvedWall = document.createElement("div");
   solvedWall.classList.add("solvedWall");
   const rows = [];
+  let textIndex = 0;
   for (let i = 0; i < 4; i++) {
     const row = document.createElement("div");
     const textDiv = document.createElement("div");
     const p = document.createElement("p");
-    p.textContent = "Some Text";
+    p.textContent = links[wallSolvedOrder[textIndex++]];
     p.classList.add("textRow");
     textDiv.appendChild(p);
     textDiv.classList.add("textDiv");
