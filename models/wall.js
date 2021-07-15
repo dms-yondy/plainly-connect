@@ -12,7 +12,7 @@ const wallSchema = new Schema({
   },
   links: {
     type: Array,
-    required: true;
+    required: true,
   },
 });
 
