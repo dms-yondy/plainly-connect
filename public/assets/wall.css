@@ -146,6 +146,7 @@
 .textRow {
   font-size: 2rem;
   font-weight: bold;
+  color: var(--light);
   margin: 0;
 }
 
