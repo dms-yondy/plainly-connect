@@ -123,7 +123,6 @@ function shuffle(arr) {
 }
 
 function checkRow(arr) {
-  console.log(arr);
   let valid = true;
   for (let i = 0; i < wall.length; i++) {
     const row = wall[i];
@@ -225,7 +224,6 @@ elements.forEach((element) => {
 });
 
 button.addEventListener("click", (e) => {
-  console.log("clicked");
   let threeMinutes = 60 * 3;
   display = document.querySelector("#time");
   button.classList.add("fixed");
