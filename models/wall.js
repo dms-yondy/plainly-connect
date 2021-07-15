@@ -10,6 +10,10 @@ const wallSchema = new Schema({
     type: Array,
     required: true,
   },
+  links: {
+    type: Array,
+    required: true,
+  },
 });
 
 const Wall = mongoose.model("Wall", wallSchema);

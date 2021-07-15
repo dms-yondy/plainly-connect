@@ -80,24 +80,78 @@
   pointer-events: none;
 }
 
+.solvedWall {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.rowBorder_1:hover {
+  outline: solid 3px var(--accent);
+}
+
+.rowBorder_2:hover {
+  outline: solid 3px var(--accent);
+}
+
+.rowBorder_3:hover {
+  outline: solid 3px var(--accent);
+}
+
+.rowBorder_4:hover {
+  outline: solid 3px var(--accent);
+}
+
 .row_1 {
   background: blue;
+  border: solid 3px blue;
   color: var(--light);
 }
 
 .row_2 {
   background: red;
+  border: solid 3px red;
   color: var(--light);
 }
 
 .row_3 {
   background: green;
+  border: solid 3px green;
   color: var(--light);
 }
 
 .row_4 {
-  background: black;
+  background: orange;
+  border: solid 3px orange;
   color: var(--light);
+}
+.textDiv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.textRow {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.textDiv:hover {
+  background-color: var(--accent);
+  opacity: 1;
 }
 
 .lives_container {
