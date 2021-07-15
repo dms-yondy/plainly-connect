@@ -64,6 +64,7 @@ async function select(e) {
 }
 
 async function swap(elem1, elem2) {
+  container.classList.add("fixed");
   const rect0 = elem1.getBoundingClientRect();
   const rect1 = elem2.getBoundingClientRect();
   const top0 = rect0.top;
