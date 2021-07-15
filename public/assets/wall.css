@@ -95,19 +95,19 @@
 }
 
 .rowBorder_1:hover {
-  outline: solid 3px black;
+  outline: solid 3px var(--accent);
 }
 
 .rowBorder_2:hover {
-  outline: solid 3px black;
+  outline: solid 3px var(--accent);
 }
 
 .rowBorder_3:hover {
-  outline: solid 3px black;
+  outline: solid 3px var(--accent);
 }
 
 .rowBorder_4:hover {
-  outline: solid 3px black;
+  outline: solid 3px var(--accent);
 }
 
 .row_1 {
@@ -150,6 +150,7 @@
 }
 
 .textDiv:hover {
+  background-color: var(--accent);
   opacity: 1;
 }
 
